@@ -12,7 +12,7 @@ const NumberInput: React.FC<Props> = ({ value, onChange }) => {
       <input
         type="number"
         value={value}
-        onWheel={(e) => e.target.blur()}
+        onWheel={(e) => e.currentTarget.blur()}
         onChange={(e) => {
           onChange(e.target.valueAsNumber);
         }}
