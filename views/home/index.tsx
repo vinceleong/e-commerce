@@ -1,6 +1,6 @@
 import ProductCategory from "./ProductCategory";
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <div>
       <ProductCategory />
@@ -26,3 +26,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;
