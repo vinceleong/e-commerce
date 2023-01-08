@@ -1,3 +1,3 @@
-import Category from "views/Category";
+import Home from "views/Home";
 
-export default Category;
+export default Home;
