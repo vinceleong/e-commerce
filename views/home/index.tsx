@@ -1,9 +1,8 @@
-import MainLayout from "layouts/MainLayout";
 import ProductCategory from "./ProductCategory";
 
 export default function Home() {
   return (
-    <MainLayout>
+    <div>
       <ProductCategory />
       <div
         style={{
@@ -24,6 +23,6 @@ export default function Home() {
       >
         Some other section
       </div>
-    </MainLayout>
+    </div>
   );
 }

@@ -23,14 +23,21 @@ const GlobalStyle = createGlobalStyle`
     padding: 10px;
     border: none;
     border-radius: 10px;
-    background-color: ${(props) => props.theme.colors.secondary};
-    color: black;
+    background-color: ${(props) => props.theme.colors.primary};
+    color: white;
     cursor: pointer;
+    :hover {
+      background-color: ${(props) => props.theme.colors.primaryHover};
+    }
   }
 
   input {
     border: 0;
     outline: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
   }
 
   <!--
