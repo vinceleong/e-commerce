@@ -11,9 +11,7 @@ const Landing: React.FC = () => {
                 height: "25rem",
                 backgroundColor: "gainsboro",
             }}
-        >
-            Some other section
-        </div>
+        />
         <div
             style={{
                 width: "100%",
@@ -21,9 +19,7 @@ const Landing: React.FC = () => {
                 backgroundColor: "pink",
                 marginTop: "2rem",
             }}
-        >
-            Some other section
-        </div>
+        />
     </div>
 };
 
