@@ -28,11 +28,15 @@ const Root = styled.div(({ theme }) => `
     display: flex;
     column-gap: 1rem;
     padding: 0.5rem;
-    :hover {
-      outline: 0.1rem solid ${theme.colors.primary};
-    }
     border-radius: ${theme.borderRadius.sm};
     cursor: pointer;
+    ${theme.size.md(`
+      border: 0.1rem solid ${theme.colors.background};
+      :hover {
+        border: 0.1rem solid ${theme.colors.primary};
+      }
+    `)
+  }
   }
 
   .image {

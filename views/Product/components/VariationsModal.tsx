@@ -120,7 +120,7 @@ const Title = styled.div`
 `;
 
 const VariantButton = styled.button`
-  outline: 0.1rem solid ${(props) => props.theme.colors.primary};
+  border: 0.1rem solid ${(props) => props.theme.colors.primary};
   background-color: ${(props) => props.theme.colors.backgroundSecondary};
   color: black;
 `;

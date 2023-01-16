@@ -46,7 +46,7 @@ const VariationContainer = styled.div`
   column-gap: 1rem;
 `;
 const VariationItem = styled.div`
-  outline: 0.1rem solid ${(props) => props.theme.colors.primary};
+  border: 0.1rem solid ${(props) => props.theme.colors.primary};
   background-color: ${(props) => props.theme.colors.backgroundSecondary};
   border-radius: ${(props) => props.theme.borderRadius.md};
   padding: 0.5rem;
