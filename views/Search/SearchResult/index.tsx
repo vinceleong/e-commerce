@@ -11,7 +11,7 @@ const SearchResult: React.FC = () => {
           <div className="image" />
           <div>
             <h5 className="name">{result.name}</h5>
-            <span className="price">From RM${result.lowestPrice}</span>
+            <span className="price">From RM{result.lowestPrice}</span>
           </div>
         </Link>
       ))}
