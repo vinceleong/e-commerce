@@ -23,7 +23,7 @@ const Modal: React.FC<props> = ({ children, open, onClose }) => {
   return (
     <AnimatePresence>{
       open && <Root onClick={onClose}
-        {...!isMd && {
+        {...isMd && {
           initial: {
             opacity: 0,
           },
