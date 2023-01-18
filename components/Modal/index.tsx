@@ -23,18 +23,15 @@ const Modal: React.FC<props> = ({ children, open, onClose }) => {
   return (
     <AnimatePresence>{
       open && <Root onClick={onClose}
-        {...isMd && {
-          initial: {
-            opacity: 0,
-          },
-          animate: {
-            opacity: 1,
-          },
-          exit: {
-            opacity: 0,
-          }
-        }
-        }
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        exit={{
+          opacity: 0,
+        }}
         transition={transition}
       >
         <motion.div
