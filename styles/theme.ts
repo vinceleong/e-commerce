@@ -1,4 +1,5 @@
 import { DefaultTheme } from "styled-components";
+import { screenSize } from "utils/constants";
 
 declare module "styled-components" {
   export interface DefaultTheme {
@@ -38,6 +39,8 @@ declare module "styled-components" {
   }
 }
 
+
+
 const theme: DefaultTheme = {
   colors: {
     primary: "#007090",
@@ -55,11 +58,12 @@ const theme: DefaultTheme = {
     circle: 999 * 0.125 + "rem",
     custom: (scale) => scale * 0.125 + "rem",
   },
+  
   size: {
-    md: (css: string) => `@media (min-width: 768px) {
+    md: (css: string) => `@media ${screenSize.md} {
       ${css}
     }`,
-    lg: (css: string) => `@media (min-width: 1080px) {
+    lg: (css: string) => `@media ${screenSize.lg} {
       ${css}
     }`,
   },

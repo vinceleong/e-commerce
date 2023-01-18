@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence, Transition } from "framer-motion";
+import useMediaQuery from "hooks/useMediaQuery";
 
 interface props {
   open: boolean;
@@ -16,22 +17,39 @@ const Modal: React.FC<props> = ({ children, open, onClose }) => {
     damping: 12
   }
 
+  const isMd = useMediaQuery("md");
+
 
   return (
     <AnimatePresence>{
       open && <Root onClick={onClose}
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-        }}
-        exit={{
-          opacity: 0,
-        }}
+        {...!isMd && {
+          initial: {
+            opacity: 0,
+          },
+          animate: {
+            opacity: 1,
+          },
+          exit: {
+            opacity: 0,
+          }
+        }
+        }
         transition={transition}
       >
         <motion.div
+          {...!isMd && {
+            initial: {
+              y: 500
+            },
+            animate: {
+              y: 0
+            },
+            exit: {
+              y: 500
+            }
+          }
+          }
           className="content" onClick={(e) => e.stopPropagation()}
         >
           {children}
