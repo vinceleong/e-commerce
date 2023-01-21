@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
+import { CgChevronLeft } from "react-icons/cg";
+import useMediaQuery from "hooks/useMediaQuery";
 
 export interface AppBarProps {
   hasSearchBar: boolean;
@@ -7,13 +9,17 @@ export interface AppBarProps {
 
 const AppBar: React.FC<AppBarProps> = ({ hasSearchBar }) => {
   const router = useRouter();
+  const isMd = useMediaQuery("md");
+  const showBack = !isMd && !hasSearchBar;
 
   return (
     <Root hasSearchBar={hasSearchBar}>
       <div className="first-row">
-        <h3 className="home-button" onClick={() => router.push("/")}>
-          E-commerce
-        </h3>
+        {
+          showBack ? <CgChevronLeft className="back-button" onClick={router.back} /> : <h3 className="home-button" onClick={() => router.push("/")}>
+            E-commerce
+          </h3>
+        }
         <div>
           <span className="link-button">Chat</span>
           <span className="link-button">Wishlist</span>
@@ -82,6 +88,10 @@ const Root = styled.div<StyleProps>(p => `
     .search-input {
       width: 100%;
       height: 100%;
+    }
+
+    .back-button {
+      font-size: 1.5rem;
     }
   `
 );
