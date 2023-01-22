@@ -27,8 +27,9 @@ const MainLayout: React.FC<Props> = ({ title, children }) => {
     <div>
       <Head>
         <title>{title ?? "E-commerce"}</title>
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content={theme.colors.primary} />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content={theme.colors.primary} />
+        {/* <meta name="theme-color" media="(prefers-color-scheme: light)" content={theme.colors.primary} />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content={theme.colors.primary} /> */}
+        <meta name="theme-color" content={theme.colors.primary} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AppBar hasSearchBar={hasSearchBar} />
