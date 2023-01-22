@@ -2,6 +2,8 @@ import React from "react";
 import create from "zustand";
 import Modal from "./Modal";
 
+import styled, { ThemeProps } from "styled-components";
+
 type alertType = "success" | "failure";
 interface config {
     type: alertType
@@ -42,10 +44,47 @@ const Alert: React.FC = () => {
     const handleClose = useAlert((state) => state.handleClose);
 
     return <Modal open={open} onClose={handleClose}>
-        {content}
-        <button>OK</button>
+        <Root>
+            <div>
+                {content}
+            </div>
+            <div className="action-btn-container">
+                <button className="action-btn" onClick={handleClose}>OK</button>
+            </div>
+        </Root>
     </Modal>
 }
+
+const Root = styled.section(({ theme }) => `
+    padding: 0.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1rem;
+    align-items: center;
+
+    ${theme.size.md(`
+        row-gap: 3rem;
+    `)}
+
+    .action-btn-container {
+        padding: 0.5rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        ${theme.size.md(`
+            position: relative;
+            padding: 0;
+        `)}
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+`)
+
+
 
 export default Alert;
 
