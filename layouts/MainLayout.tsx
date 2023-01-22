@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import styled from "styled-components";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useTheme } from "styled-components";
 
 import AppBar from "./components/AppBar";
 
@@ -12,6 +13,7 @@ export interface Props {
 
 const MainLayout: React.FC<Props> = ({ title, children }) => {
   const router = useRouter();
+  const theme = useTheme();
   const { pathname } = router;
 
   const hasSearchBar = ![
@@ -26,6 +28,7 @@ const MainLayout: React.FC<Props> = ({ title, children }) => {
       <Head>
         <title>{title ?? "E-commerce"}</title>
         <meta name="description" />
+        <meta name="theme-color" content={theme.colors.primary} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AppBar hasSearchBar={hasSearchBar} />
